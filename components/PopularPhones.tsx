@@ -5,10 +5,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import img1 from "../public/hp.png";
-import img2 from "../public/huawei.png";
-import img3 from "../public/image 96.png";
-import img4 from "../public/image 97.png";
+import img1 from "../public/mobiles/img2.jpg";
+import img2 from "../public/mobiles/img3.png";
+import img3 from "../public/mobiles/img4.jpg";
+import img4 from "../public/mobiles/shopping.webp";
 import { Swiper as SwiperType } from "swiper";
 
 const PopularPhones = () => {
@@ -23,7 +23,10 @@ const PopularPhones = () => {
 
   return (
     <div className="relative mb-2">
-      <h2 className="font-semibold text-lg mb-1 p-1">Popular Phones</h2>
+      <h2 className="text-lg p-2 font-bold">
+        Popular Phones<span>&nbsp;»</span>
+      </h2>
+
       <Swiper
         spaceBetween={0}
         slidesPerView={3}
@@ -40,16 +43,16 @@ const PopularPhones = () => {
       >
         {swiperItems.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-white w-full h-56 border-gray-300 shadow-lg flex flex-col items-center">
+            <div className="bg-white w-full h-48 border-gray-300 shadow-lg flex flex-col items-center">
               <img
                 src={item.image.src}
                 alt={item.title}
-                className="min-w-[6rem] min-h-[7rem] w-24 h-28 p-3 object-cover"
+                className="min-w-[1rem] min-h-[7rem] w-24 h-28 p-1 object-fit"
               />
-              <h3 className="text-center text-wrap border-t-2 w-[98%] px-2 font-medium mt-2">
+              <h3 className="text-center text-sm font-semibold sm:text-wrap border-t-2 px-2">
                 {item.title}
               </h3>
-              <div className="flex gap-1 items-center justify-between px-2 mb-2 py-2 mt-auto w-[90%]">
+              <div className="flex gap-1 items-center justify-between mt-auto mb-2 w-[90%]">
                 <div className="text-gray-600 font-bold text-sm">
                   {item.price}
                 </div>
