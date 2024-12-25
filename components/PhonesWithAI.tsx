@@ -23,7 +23,9 @@ const PhonesWithAI = () => {
 
   return (
     <div className="relative mb-2">
-      <h2 className="font-semibold text-lg mb-1 p-1">Phones with AI</h2>
+      <h2 className="text-lg p-2 font-bold">
+        Phones with AI<span>&nbsp;»</span>
+      </h2>
       <Swiper
         spaceBetween={0}
         slidesPerView={3}
@@ -44,9 +46,9 @@ const PhonesWithAI = () => {
               <img
                 src={item.image.src}
                 alt={item.title}
-                className="min-w-[6rem] min-h-[7rem] w-24 h-28 p-3 object-cover"
+                className="min-w-[6rem] min-h-[7rem] w-24 h-28 p-1 object-fit"
               />
-              <h3 className="text-center text-wrap border-t-2 w-[98%] px-2 font-medium mt-2">
+              <h3 className="text-center text-wrap border-t-2 w-[98%] px-1 text-sm font-medium mt-2">
                 {item.title}
               </h3>
             </div>

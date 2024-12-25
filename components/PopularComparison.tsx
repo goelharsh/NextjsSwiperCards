@@ -11,7 +11,7 @@ import img3 from "../public/image 96.png";
 import img4 from "../public/image 97.png";
 import { Swiper as SwiperType } from "swiper";
 
-const UpcomingPhones = () => {
+const PopularComparison = () => {
   const swiperRef = useRef<SwiperType | null>(null);
 
   const swiperItems = [
@@ -23,10 +23,12 @@ const UpcomingPhones = () => {
 
   return (
     <div className="relative mb-2">
-      <h2 className="font-semibold text-lg mb-1 p-1">Upcoming Phones</h2>
+      <h2 className="text-lg p-2 font-bold">
+        Popular Comparisons<span>&nbsp;»</span>
+      </h2>
       <Swiper
-        spaceBetween={0}
-        slidesPerView={3}
+        spaceBetween={16}
+        slidesPerView={1.7}
         pagination={false}
         navigation={{
           nextEl: ".swiper-button-next",
@@ -40,15 +42,32 @@ const UpcomingPhones = () => {
       >
         {swiperItems.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-white w-full h-44 border-gray-300 shadow-lg flex flex-col items-center">
-              <img
-                src={item.image.src}
-                alt={item.title}
-                className="min-w-[6rem] min-h-[7rem] w-24 h-28 p-3 object-cover"
-              />
-              <h3 className="text-center text-wrap border-t-2 w-[98%] px-2 font-medium mt-2">
-                {item.title}
-              </h3>
+            <div className="bg-white w-[260px] h-40 border-gray-300 shadow-lg flex flex-col items-center">
+              <div className="flex justify-between items-center gap-2">
+                <div>
+                  <img
+                    src={item.image.src}
+                    alt={item.title}
+                    className="p-3 object-fit w-24 h-24"
+                  />
+                  <h3 className="text-center text-sm text-wrap border-t-2 w-[98%] px-2 font-medium mt-2">
+                    {item.title}
+                  </h3>
+                </div>
+                <h3 className="bg-gray-600 text-white rounded-full p-1 w-6 h-6 text-sm flex items-center justify-center">
+                  VS
+                </h3>
+                <div>
+                  <img
+                    src={item.image.src}
+                    alt={item.title}
+                    className="p-3 object-fit w-24 h-24"
+                  />
+                  <h3 className="text-center text-sm text-wrap border-t-2 w-[98%] px-2 font-medium mt-2">
+                    {item.title}
+                  </h3>
+                </div>
+              </div>
             </div>
           </SwiperSlide>
         ))}
@@ -57,4 +76,4 @@ const UpcomingPhones = () => {
   );
 };
 
-export default UpcomingPhones;
+export default PopularComparison;

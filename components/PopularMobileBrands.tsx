@@ -28,7 +28,9 @@ const PopularMobileBrands = () => {
 
   return (
     <div className="relative mb-2">
-      <h2 className="font-semibold text-lg mb-1 p-1">Popular Mobile Brands</h2>
+      <h2 className="text-lg p-2 font-bold">
+        Popular Mobile Brands<span>&nbsp;»</span>
+      </h2>
       <Swiper
         spaceBetween={0}
         slidesPerView={3}

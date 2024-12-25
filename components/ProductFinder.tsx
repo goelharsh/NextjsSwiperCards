@@ -11,21 +11,26 @@ import img3 from "../public/image 96.png";
 import img4 from "../public/image 97.png";
 import { Swiper as SwiperType } from "swiper";
 
-const LatestPhones = () => {
+const ProductFinder = () => {
   const swiperRef = useRef<SwiperType | null>(null);
 
   const swiperItems = [
-    { image: img1, title: "Samsung Galaxy Z Flip6", price: "₹84,000" },
-    { image: img2, title: "Huawei P60 Pro", price: "₹95,000" },
-    { image: img3, title: "iPhone 14 Pro Max", price: "₹1,39,000" },
-    { image: img4, title: "OnePlus 11R", price: "₹45,000" },
+    { image: img1, title: "Mobiles" },
+    { image: img2, title: "Laptops" },
+    { image: img3, title: "TV" },
+    { image: img4, title: "Tables" },
+    { image: img4, title: "Smart Watches" },
+    { image: img4, title: "Headphones" },
+    { image: img4, title: "Cameras" },
+    { image: img4, title: "Gaming Consoles" },
+    { image: img4, title: "Smart Brands" },
+    { image: img4, title: "Speakers" },
+    { image: img4, title: "Smart Speakers" },
   ];
 
   return (
     <div className="relative mb-2">
-      <h2 className="text-lg p-2 font-bold">
-        Latest Phones<span>&nbsp;»</span>
-      </h2>
+      <h2 className="text-lg p-2 font-bold">Product Finder with AI</h2>
       <Swiper
         spaceBetween={0}
         slidesPerView={3}
@@ -42,15 +47,13 @@ const LatestPhones = () => {
       >
         {swiperItems.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-white w-full h-44 border-gray-300 shadow-lg flex flex-col items-center">
+            <div className="bg-white w-full h-24 border-gray-300 shadow-lg flex flex-col items-center">
               <img
                 src={item.image.src}
                 alt={item.title}
-                className="min-w-[6rem] min-h-[7rem] w-24 h-28 p-3 object-fit"
+                className="p-1 min-h-[4rem] mb-1 object-fit"
               />
-              <h3 className="text-center text-wrap border-t-2 w-[98%] px-2 text-sm font-medium mt-2">
-                {item.title}
-              </h3>
+              <h3 className="text-center text-sm pb-1">{item.title}</h3>
             </div>
           </SwiperSlide>
         ))}
@@ -59,4 +62,4 @@ const LatestPhones = () => {
   );
 };
 
-export default LatestPhones;
+export default ProductFinder;
